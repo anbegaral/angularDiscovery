@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import { HomeResolver } from '../resolvers/home.resolver';
 
 const routes: Routes = [
   {
@@ -14,7 +15,8 @@ const routes: Routes = [
             path: '',
             loadChildren: '../home/home.module#HomePageModule'
           }
-        ]
+        ],
+        resolve: { locationList: HomeResolver}
       },
       {
         path: 'tab2',
@@ -52,6 +54,7 @@ const routes: Routes = [
   imports: [
     RouterModule.forChild(routes)
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [HomeResolver]
 })
 export class TabsPageRoutingModule {}

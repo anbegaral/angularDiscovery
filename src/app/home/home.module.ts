@@ -1,3 +1,4 @@
+import { HomeResolver } from './../resolvers/home.resolver';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -23,6 +24,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [HomePage]
+  declarations: [HomePage],
+  providers: [HomeResolver]
 })
 export class HomePageModule {}
